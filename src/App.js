@@ -3,10 +3,12 @@ import fire from "./fire";
 import Form from "./Components/Form/Form";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
-import Publicfeed from "./Components/Publicfeed/Publicfeed";
 import University from "./Components/University/University";
-import Homepage from "./Components/Homepage/Homepage";
+import Form from "./Components/Form/Form";
+import Publicfeed from "./Components/Publicfeed/Publicfeed";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+import Homepage from "./Components/Homepage/Homepage";
 
 function App() {
     const [user, setUser] = useState('');
@@ -101,6 +103,17 @@ function App() {
                 />
             )}
         </div>
+<Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/Form" component={Form} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Publicfeed" component={Publicfeed} />
+        <Route path="/Register" component={Register} />
+        <Route path="/University" component={University} />
+      </Switch>
+    </Router>
     // <Router>
     //   <Switch>
     //     <Route exact path="/">
@@ -123,6 +136,7 @@ function App() {
     //     </Route>
     //   </Switch>
     // </Router>
+
   );
 }
 
