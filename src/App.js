@@ -1,34 +1,24 @@
 import React from "react";
-import Form from "./Components/Form/Form";
+import Homepage from "./Components/Homepage/Homepage";
 import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
-import Publicfeed from "./Components/Publicfeed/Publicfeed";
 import University from "./Components/University/University";
-import Homepage from "./Components/Homepage/Homepage";
+import Form from "./Components/Form/Form";
+import Publicfeed from "./Components/Publicfeed/Publicfeed";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Switch>
-        <Route exact path="/">
-          <Homepage />
-        </Route>
-        <Route path="/Login">
-          <Login />
-        </Route>
-        <Route path="/Register">
-          <Register />
-        </Route>
-        <Route path="/University">
-          <University />
-        </Route>
-        <Route path="/Form">
-          <Form />
-        </Route>
-        <Route path="/Publicfeed">
-          <Publicfeed />
-        </Route>
+        <Route path="/" exact component={Homepage} />
+        <Route path="/Form" component={Form} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Publicfeed" component={Publicfeed} />
+        <Route path="/Register" component={Register} />
+        <Route path="/University" component={University} />
       </Switch>
     </Router>
   );
