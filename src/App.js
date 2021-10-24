@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Form from "./Components/Form/Form";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
+import Publicfeed from "./Components/Publicfeed/Publicfeed";
+import University from "./Components/University/University";
+import Homepage from "./Components/Homepage/Homepage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+        <Route path="/Login">
+          <Login />
+        </Route>
+        <Route path="/Register">
+          <Register />
+        </Route>
+        <Route path="/University">
+          <University />
+        </Route>
+        <Route path="/Form">
+          <Form />
+        </Route>
+        <Route path="/Publicfeed">
+          <Publicfeed />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
